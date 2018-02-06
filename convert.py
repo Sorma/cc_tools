@@ -3,6 +3,13 @@ import cc_dat_utils
 #Part 1
 #Use cc_data_utils.make_cc_data_from_dat() to load pfgd_test.dat
 #print the resulting data
+FILE = "data/pfgd_test.dat"
+result_data = cc_dat_utils.make_cc_data_from_dat(FILE)
+print (result_data)
+
+text_file = open('data/pfgd_text.txt', 'w')
+text_file.write(str(result_data))
+text_file.close()
 
 
 #Part 2
