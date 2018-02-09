@@ -1,4 +1,4 @@
-import cc_dat_utils, test_data
+import cc_dat_utils, cc_json_utils, test_data
 import test_json_utils
 import json
 
@@ -31,5 +31,13 @@ print (game_library)
 
 #Part 3
 #Load your custom JSON file
-#Convert JSON data to cc_data
-#Save converted data to DAT file
+input_level_json_file = "data/new_level_data.json"
+output_level_dat_file = "data/new_level_pack.dat"
+with open(input_level_json_file, 'r') as json_file, open(output_level_dat_file, 'w') as dat_file:
+    json_level_data = json.load(open(input_level_json_file))
+
+    #Convert JSON data to cc_data
+    cc_json_utils.make_cc_data_from_json(json_level_data)
+
+    #Save converted data to DAT file
+    #dat_file.write(stuff)
