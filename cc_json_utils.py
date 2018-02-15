@@ -59,7 +59,7 @@ def make_field_from_json(type, value):
     if type == 3:
         return cc_data.CCMapTitleField(value)
     elif type == 6:
-        return cc_data.CCPasswordField(value)
+        return cc_data.CCEncodedPasswordField(value)
     elif type == 7:
         return cc_data.CCMapHintField(value)
     elif type == 10:
