@@ -1,7 +1,7 @@
 import cc_dat_utils, cc_json_utils, test_data
 import test_json_utils
 import json
-
+'''
 #Part 1
 #Use cc_data_utils.make_cc_data_from_dat() to load pfgd_test.dat
 #print the resulting data
@@ -27,17 +27,16 @@ game_library = test_json_utils.make_game_library_from_json(json_data)
 print (game_library)
 
 ### End Add Code Here ###
-
+'''
 
 #Part 3
 #Load your custom JSON file
-input_level_json_file = "data/new_level_data.json"
-output_level_dat_file = "data/new_level_pack.dat"
+input_level_json_file = "data/jiajunl2_cc1.json"
+output_level_dat_file = "data/jiajunl2_cc1.dat"
 with open(input_level_json_file, 'r') as json_file, open(output_level_dat_file, 'w') as dat_file:
-    json_level_data = json.load(open(input_level_json_file))
-
+    json_level_data = json.load(json_file)
     #Convert JSON data to cc_data
-    cc_json_utils.make_cc_data_from_json(json_level_data)
-
+    cc_data = cc_json_utils.make_cc_data_from_json(json_level_data)
     #Save converted data to DAT file
-    #dat_file.write(stuff)
+    print(cc_data.levels[0])
+    cc_dat_utils.write_cc_data_to_dat(cc_data, output_level_dat_file)
