@@ -67,3 +67,14 @@ def make_field_from_json(type, value):
         for i in value:
             coordinate_list.append(cc_data.CCCoordinate(i[0], i[1]))
         return cc_data.CCMonsterMovementField(coordinate_list)
+    # optional field types
+    elif type == 4:
+        coordinate_list = []
+        for i in value:
+            coordinate_list.append(cc_data.CCTrapControl(i[0], i[1], i[2], i[3]))
+        return cc_data.CCTrapControlsField(coordinate_list)
+    elif type == 5:
+        coordinate_list = []
+        for i in value:
+            coordinate_list.append(cc_data.CCCloningMachineControl(i[0], i[1], i[2], i[3]))
+        return cc_data.CCCloningMachineControlsField(coordinate_list)
