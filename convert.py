@@ -38,5 +38,5 @@ with open(input_level_json_file, 'r') as json_file, open(output_level_dat_file, 
     #Convert JSON data to cc_data
     cc_data = cc_json_utils.make_cc_data_from_json(json_level_data)
     #Save converted data to DAT file
-    print(cc_data)
+    #print(cc_data)
     cc_dat_utils.write_cc_data_to_dat(cc_data, output_level_dat_file)
